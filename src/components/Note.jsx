@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function Note() {
+export default function Note(props) {
+    const {title, content} = props;
     return (
         <div className="note">
-            <h1>Title</h1>
-            <p>Notes taken here</p>
+            <h1>{title}</h1>
+            <p>{content}</p>
         </div>
     );
 };
