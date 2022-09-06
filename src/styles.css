@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    background-color: #f5ba13;
+    background-color: lightcoral;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     margin: auto -16px;
     padding: 16px 32px;
@@ -36,23 +36,87 @@ body {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
     margin: 16px;
     width: 240px;
-  }
+}
 
-  .note h1 {
-    font-size: 1.1em;
+.note h1 {
+    font-size: 1.2em;
     font-weight: 600;
-    margin-bottom: 6px;
-  }
+    margin-bottom: 12px;
+}
 
-  .note p {
+.note p {
     font-size: 1.1em;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
-  }
+}
+
+.note button {
+    align-self: flex-end;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'montserrat';
+    font-size: 1em;
+    font-weight: bolder;
+    height: 30px;
+    outline: none;
+    width: 35%;
+}
+
+.noteForm {
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    margin: 30px auto;
+    padding: 15px;
+    width: 480px;
+}
+
+.noteForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    align-self: flex-end;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'montserrat';
+    font-size: 1em;
+    font-weight: bolder;
+    height: 30px;
+    outline: none;
+    width: 15%;
+}
+
+form input,
+form textarea {
+  border: none;
+  font-family: inherit;
+  outline: none;
+  padding: 4px;
+  resize: none;
+  width: 100%;
+}
+
+form input {
+    font-size: 1.2em;
+}
+
+form textarea {
+    font-size: 1.1em;
+}
 
 .footer {
     bottom: 0;
