@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
+import Zoom from '@mui/material/Zoom';
 
 export default function NoteCreation(props) {
     const {addClicked} = props;
@@ -6,6 +9,11 @@ export default function NoteCreation(props) {
         title: "",
         content: ""
     })
+    const [expandCreation, setExpandCreation] = useState(false);
+
+    const handleExpand = () => {
+      setExpandCreation(true);
+    }
 
     const handleChangeTitle = (e) => {
         setNote({
@@ -23,17 +31,31 @@ export default function NoteCreation(props) {
     
     return (
         <div className="noteForm">
-            <form>
-                <input onChange={handleChangeTitle} name="title" placeholder="Note Title" value={note.title}></input>
-                <textarea onChange={handleChangeContent} name="content" placeholder="Write your note" row="3" value={note.content}></textarea>
-                <button onClick={(e) => {
-                    e.preventDefault();
-                    setNote({
-                        title: "",
-                        content: ""
-                    });
-                    addClicked(note);
-                }}>Add</button>
+            <form className="createNote">
+                {expandCreation && <input onChange={handleChangeTitle} name="title" placeholder="Note Title" value={note.title}></input>}
+                <textarea 
+                    onChange={handleChangeContent} 
+                    onFocus={handleExpand}
+                    name="content" 
+                    placeholder="Write your note" 
+                    rows={expandCreation ? "3" : "1"} 
+                    value={note.content}>
+                </textarea>
+                {expandCreation && <Zoom in={true}>
+                    <Fab
+                        className="addButton"
+                        size="medium"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setNote({
+                                title: "",
+                                content: ""
+                            });
+                            addClicked(note);
+                        }}>
+                            <AddIcon/>
+                    </Fab>
+                </Zoom>}
             </form>
         </div>
     );

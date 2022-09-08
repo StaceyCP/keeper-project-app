@@ -10,6 +10,7 @@ html {
 
 body {
     background-color: #eee;
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
     padding: 0 16px;
 }
 
@@ -29,6 +30,7 @@ body {
 
 .notesContainer {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -39,6 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 12px;
+    position: relative;
     margin: 16px;
     width: 240px;
 }
@@ -60,7 +63,7 @@ body {
     align-self: flex-end;
     background-color: lightcoral;
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     color: #fff;
     cursor: pointer;
     font-family: 'montserrat';
@@ -68,7 +71,11 @@ body {
     font-weight: bolder;
     height: 30px;
     outline: none;
-    width: 35%;
+    padding: 3px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 14%;
 }
 
 .noteForm {
@@ -85,19 +92,12 @@ body {
     flex-direction: column;
 }
 
-form button {
+form.createNote button {
     align-self: flex-end;
     background-color: lightcoral;
-    border: none;
-    border-radius: 7px;
     color: #fff;
     cursor: pointer;
     font-family: 'montserrat';
-    font-size: 1em;
-    font-weight: bolder;
-    height: 30px;
-    outline: none;
-    width: 15%;
 }
 
 form input,

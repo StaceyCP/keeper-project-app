@@ -23,8 +23,10 @@ function App() {
   return (
     <div className="app">
       <Header/>
-      <NoteCreation addClicked={handleAddNote}/>
-      <div>
+      <NoteCreation 
+        addClicked={handleAddNote}
+      />
+      <div className="notesContainer">
         {noteItems.map((note, index) => (
           <Note
             key={index}
